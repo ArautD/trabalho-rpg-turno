@@ -8,12 +8,25 @@ class Personagem{
         int forca;
         int defesa;
 
-        virtual void atacar(){}
+        virtual ~Personagem() = default;
+        virtual void atacar(Personagem& alvo) = 0;
+        virtual void especial(Personagem& alvo) = 0;
+
+        void receberDano(int dano){
+            pontosVida -= dano;
+            if (pontosVida < 0) pontosVida = 0;
+        }
 };
 
 class Guerreiro : public Personagem{
     public:
         int coragem;
+
+        void atacar() override{
+            int dano = ataque - alvo.defesa;
+        } 
+        void especial() override {
+        }
 };
 
 class Mago : public Personagem{
