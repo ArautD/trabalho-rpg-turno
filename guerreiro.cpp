@@ -37,28 +37,6 @@ void Guerreiro::atacar(Personagem& alvo){
         coragem ++;
     }
 
-    /*void Guerreiro::ataqueEspecial(Personagem& alvo){
-        if (covarde) {
-            std::cout << "\n" << nome << " está covarde e não pode usar especial!\n";
-            return;
-        }
-        if (coragem > 0) {
-            int dano = (forca * 2) - (alvo.defesa / 2);
-            if (dano < 0) dano = 0;
-            alvo.receberDano(dano);
-            coragem--;
-            std::cout << "\n===== ATAQUE ESPECIAL DE " << nome << " =====\n";
-            std::cout << "Ataque corajoso causou " << dano << " de dano!\n";
-            std::cout << "Coragem restante: " << coragem << "\n";
-            if (coragem == 0) {
-                covarde = true;
-                std::cout << nome << " ficou covarde e perderá o próximo turno!\n";
-            }
-        } else {
-            std::cout << "\nVocê não tem coragem suficiente!\n";
-        }
-    }*/
-
     void Guerreiro::habilidadeEspecial(Personagem& alvo){
          
         if (coragem >= 2){
@@ -80,7 +58,6 @@ void Guerreiro::atacar(Personagem& alvo){
                             break;
                 }
                 case 2: {
-                    receberDano();
                     std::cout << "\n===== GRITO DE GUERRA DE " << nome << " =====\n";
                     rodadasProtegido = 2;
                     std::cout << nome << " ficará protegido e receberá menos dano por 2 rodadas!\n";
