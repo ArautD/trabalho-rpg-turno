@@ -8,6 +8,8 @@ int main(){
 
     menuPrincipal();
 
+    delete p1;
+    delete inimigo;
 
     return 0;
 }
